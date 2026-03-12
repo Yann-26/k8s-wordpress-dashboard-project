@@ -1,0 +1,40 @@
+# Save as dashboard-readonly.yaml
+# ServiceAccount for read-only Dashboard access
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: readonly-user
+  namespace: kubernetes-dashboard
+---
+# ClusterRole with view-only permissions
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: dashboard-readonly
+rules:
+- apiGroups: [""]
+  resources: ["pods", "services", "configmaps", "secrets", "persistentvolumeclaims", "nodes", "namespaces"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "daemonsets", "statefulsets", "replicasets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses", "networkpolicies"]
+  verbs: ["get", "list", "watch"]
+---
+# Bind the readonly role to our ServiceAccount
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: dashboard-readonly
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: dashboard-readonly
+subjects:
+- kind: ServiceAccount
+  name: readonly-user
+  namespace: kubernetes-dashboard
