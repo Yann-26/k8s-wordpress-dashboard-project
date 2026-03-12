@@ -142,12 +142,12 @@ kubectl -n kubernetes-dashboard create token admin-user
 * **Pending Pods:** Check if the node is tainted or if the CNI (Flannel) is missing.
 * 
 **DB Connection Error:** Ensure the `MYSQL_DATABASE` variable in `mysql-deployment.yaml` matches the `WORDPRESS_DB_NAME` in the ConfigMap.
-
+* 
+**NFS Mount Failure:** Verify that `nfs-common` is installed on all worker nodes.
 ---
 ## SCREENSHOTS
 
 https://github.com/user-attachments/assets/04c823fa-561b-4c76-8f5c-bd04d2dc7724
-
 
 
 <img width="1353" height="435" alt="Image" src="https://github.com/user-attachments/assets/2b7c6978-ca71-4db0-a60a-f37529d9a9b4" />
@@ -167,5 +167,4 @@ https://github.com/user-attachments/assets/04c823fa-561b-4c76-8f5c-bd04d2dc7724
 <img width="1765" height="1009" alt="Image" src="https://github.com/user-attachments/assets/c369836d-5c3e-4672-a220-5e7b6216f004" />
 
 
-* 
-**NFS Mount Failure:** Verify that `nfs-common` is installed on all worker nodes.
+
