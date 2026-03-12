@@ -143,6 +143,29 @@ kubectl -n kubernetes-dashboard create token admin-user
 * 
 **DB Connection Error:** Ensure the `MYSQL_DATABASE` variable in `mysql-deployment.yaml` matches the `WORDPRESS_DB_NAME` in the ConfigMap.
 
+---
+## SCREENSHOTS
+
+https://github.com/user-attachments/assets/04c823fa-561b-4c76-8f5c-bd04d2dc7724
+
+1. <img width="1560" height="393" alt="Image" src="https://github.com/user-attachments/assets/d9e20257-d776-4d94-94be-5e15ea544e05" />
+
+2. <img width="1353" height="435" alt="Image" src="https://github.com/user-attachments/assets/2b7c6978-ca71-4db0-a60a-f37529d9a9b4" />
+
+3. <img width="1353" height="435" alt="Image" src="https://github.com/user-attachments/assets/b893dcb9-a7b3-4148-b82d-fc807ed9d6d7" />
+
+4. <img width="1417" height="97" alt="Image" src="https://github.com/user-attachments/assets/0e98caa0-8de1-4d6f-b565-6cc26726259e" />
+
+5. <img width="1417" height="97" alt="Image" src="https://github.com/user-attachments/assets/6fe74596-893a-4e96-9eaa-c1bc3b352cad" />
+
+6. <img width="1417" height="97" alt="Image" src="https://github.com/user-attachments/assets/b07b6674-5ff6-48d2-96e6-6cb6cde338e6" />
+
+7. <img width="1092" height="888" alt="Image" src="https://github.com/user-attachments/assets/d24b0bb9-a008-4b2a-aa5b-9a52bae32b24" />
+
+8. <img width="1092" height="888" alt="Image" src="https://github.com/user-attachments/assets/88af7347-52c7-4238-80ba-4a72e8b67859" />
+
+9. <img width="1765" height="1009" alt="Image" src="https://github.com/user-attachments/assets/c369836d-5c3e-4672-a220-5e7b6216f004" />
+
 
 * 
 **NFS Mount Failure:** Verify that `nfs-common` is installed on all worker nodes.
